@@ -1,0 +1,8 @@
+<!-- ocr_app/templates/result.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Extracted Text from PDF</h1>
+    <p>{{ extracted_text }}</p>
+    <a href="{% url 'upload_pdf' %}">Upload Another PDF</a>
+{% endblock %}

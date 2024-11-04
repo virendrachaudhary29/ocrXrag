@@ -1,0 +1,14 @@
+<!-- ocr_app/templates/upload_pdf.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Upload a PDF for OCR</h1>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="pdf_file" accept="application/pdf">
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
